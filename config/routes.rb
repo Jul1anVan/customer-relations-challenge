@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
-  get 'finder/index'
+  get '/' => 'finder#index'
 
-  get 'finder/alphabetized'
+  get '/customers/alphabetized' => 'finder#alphabetized'
 
-  get 'finder/missing_email'
+  get '/customers/missing_email' => 'finder#missing_email'
+
+  root 'finder#index'
 
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)

@@ -1,6 +1,17 @@
-.customer
-  h2 = customer.full_name
-  img src= "/assets/#{customer.image}"/
-  p = customer.phone_number
-  p = customer.email_address
-  p = customer.notes
+doctype html
+html
+  head
+  .customers
+    .customer
+      h2 
+        strong = customer.full_name
+        
+      = image_tag customer.image
+      
+      - unless customer.email_address.empty?
+        p 
+          Normal Email Address: 
+          = customer.email_address
+      p 
+        Normal Notes: 
+        = customer.notes
