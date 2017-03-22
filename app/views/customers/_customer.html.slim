@@ -15,3 +15,15 @@ html
       p 
         Normal Notes: 
         = customer.notes
+      
+      - if(customer.province.nil?)
+        p 
+          Normal Province: None
+         
+      - else
+        p 
+          Normal Province: 
+          = customer.province.name
+            
+          
+          
